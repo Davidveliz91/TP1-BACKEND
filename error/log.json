@@ -13,5 +13,35 @@
         "id": "baed3d1b-ab9a-4953-806d-7b7ed2f6b83e",
         "type": "Access denied",
         "date": "2024-09-24T01:51:14.054Z"
+    },
+    {
+        "id": "db355d1e-66ee-4433-bec8-f91a501b1704",
+        "type": "urlfileER is not defined",
+        "date": "2024-09-24T20:42:46.481Z"
+    },
+    {
+        "id": "871da988-03a5-4d9b-82e1-096d4ecdba01",
+        "type": "Access denied",
+        "date": "2024-09-24T20:53:30.181Z"
+    },
+    {
+        "id": "ed036019-39e2-46f2-b7d8-6d3f8f9d2dd1",
+        "type": "ID is missing",
+        "date": "2024-09-24T21:10:14.355Z"
+    },
+    {
+        "id": "4ff96f4f-a2a5-443a-8624-665310098eb7",
+        "type": "ID is missing",
+        "date": "2024-09-24T21:15:47.960Z"
+    },
+    {
+        "id": "c8dd0c31-0b72-42ce-bd89-a00c92bcfcd3",
+        "type": "ID is missing",
+        "date": "2024-09-24T21:25:11.802Z"
+    },
+    {
+        "id": "651d51b2-2d44-4639-a46d-fcd7b9c3fed9",
+        "type": "User not found",
+        "date": "2024-09-24T21:32:20.925Z"
     }
 ]
