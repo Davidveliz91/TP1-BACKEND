@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "id": "688721eb-897c-4f51-8ac9-4f789fd43fa7",
+        "type": "Access denied",
+        "date": "2024-09-24T01:41:55.332Z"
+    },
+    {
+        "id": "374423eb-3d48-4b6f-a3d5-625b4736f70b",
+        "type": "Access denied",
+        "date": "2024-09-24T01:49:48.686Z"
+    },
+    {
+        "id": "baed3d1b-ab9a-4953-806d-7b7ed2f6b83e",
+        "type": "Access denied",
+        "date": "2024-09-24T01:51:14.054Z"
+    }
+]
