@@ -47,43 +47,62 @@ const getUserById = (id) => {
         return objError;
     }
 };
-//addUser recibe un objeto con toda la data para el nuevo usuario
-//Valida que esten los datos minimos para añadir un nuevo usuario
-//valida que el nombre sea un string
-//valida que el email sea un string y que no se repita
-//hashea la contraseña antes de registrar al usuario
+
 const addUser = (user) => {
     try {
-        const { name, lastName, email, password, isLoggedIn } = user;
-  
-        if(!name || !lastName || !email || !password || !isLoggedIn) {
-        throw new Error("Missing data");
-      }
-      const newUser = {
-        id: randomUUID(),
-        name,
-        lastName,
-        email,
-        password,
-        isLoggedIn,
-    };
-      
-  
-    const users = getUsers(PATH_FILE_USER);
-    users.push(newUser);
-    writeFileSync(PATH_FILE_USER, JSON.stringify(users));
-    return newUser;
+        const { name, lastName, email, password } = user;
+
+        if (!name || !lastName || !email || !password) {
+            throw new Error("Missing data");
+        }
+        const newUser = {
+            id: randomUUID(),
+            name,
+            lastName,
+            email,
+            password,
+        };
+
+
+        const users = getUsers(PATH_FILE_USER);
+
+        if (users.find(u => u.email === email)) {
+            throw new Error("User with this email already exists");
+        };
+
+        users.push(newUser);
+        writeFileSync(PATH_FILE_USER, JSON.stringify(users));
+        return newUser;
 
     } catch (error) {
         const objError = handleError(error, PATH_FILE_ERROR);
         return objError;
     }
-  };
-  
+};
 
-//todos los datos del usuario seleccionado se podrian modificar, menos el ID
+//Usuarios de Prueba
+/*const user = {
+    id: randomUUID(),
+    name: "detroit",
+    lastName: "Veliz",
+    email: "davidveliz@example.com",
+    password: "Dante1234",
+};
+
+const user2 = {
+    id: randomUUID(),
+    name: "dante",
+    lastName: "Veliz",
+    email: "davidveliz@example.com",
+    password: "David1234",
+};*/
+
+const response = addUser(user);
+console.log(response);
+
+
+
 //si se modifica la pass deberia ser nuevamente hasheada
-//si se modifica el mail, validar que este no exista
 const updateUser = (userData) => {
     try {
 

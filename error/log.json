@@ -43,5 +43,10 @@
         "id": "651d51b2-2d44-4639-a46d-fcd7b9c3fed9",
         "type": "User not found",
         "date": "2024-09-24T21:32:20.925Z"
+    },
+    {
+        "id": "746921c9-57c7-4c59-86d1-d971874310fc",
+        "type": "User with this email already exists",
+        "date": "2024-09-24T22:32:41.859Z"
     }
 ]
