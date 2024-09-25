@@ -1,18 +1,36 @@
-// Obtener los argumentos pasados por terminal (que vienen del index)
-// Desarrollar las funciones que crearn los objetos para añadir un usuario y actualizar un usuario
-// aplicar control de errores entorno a las posibilidades de que surja uno
-
-
-const createUserObject = (args) => {
-    try {
-
-    } catch (error) {}
-};
-
-const createUpdateUserObject = (args) => {
-    try {
-
-    } catch (error) {}
-};
+const createObjectUser = (args) => {
+    const [name, lastName, email, password] = args.slice(1);
+  
+    if (!name || !lastName || !email || !password) {
+        throw new Error("Missing data");
+    }
+  
+    return {
+        id: randomUUID(),
+        name,
+        lastName,
+        email,
+        password: hashedPassword,
+    };
+  };
+  
+  const createUpdateUserObject = (args) => {
+    const id = args[1];
+    const [name, lastName, email, password] = args.slice(2);
+  
+    if (!id) {
+        throw new Error("ID is missing");
+    }
+  
+    const updatedUser = {};
+    if (name) updatedUser.name = name;
+    if (lastName) updatedUser.lastName = lastName;
+    if (email) updatedUser.email = email;
+    if (password) updatedUser.password = password;
+  
+    updatedUser.id = id;
+  
+    return updatedUser;
+  };
 
 export {createUserObject, createUpdateUserObject};
