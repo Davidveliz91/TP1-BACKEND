@@ -5,8 +5,6 @@ import { randomUUID } from "node:crypto";
 import { handleError } from "./utils/handleError.js";
 import dotenv from 'dotenv';
 
-//2°declarar los metodos
-
 dotenv.config();
 
 const PATH_FILE_USER = process.env.PATH_FILE_USER;
@@ -55,14 +53,14 @@ const addUser = (user) => {
         if (!name || !lastName || !email || !password) {
             throw new Error("Missing data");
         }
+
         const newUser = {
             id: randomUUID(),
             name,
             lastName,
             email,
-            password,
+            password: hashedPassword,
         };
-
 
         const users = getUsers(PATH_FILE_USER);
 
@@ -95,21 +93,107 @@ const user2 = {
     lastName: "Veliz",
     email: "davidveliz@example.com",
     password: "David1234",
-};*/
+};
 
-const response = addUser(user);
-console.log(response);
+const user3 = {
+    id: randomUUID(),
+    name: "claudio",
+    lastName: "Veliz",
+    email: "claudioveliz@example.com",
+    password: "David1234",
+};
+
+const user4 = {
+    id: randomUUID(),
+    name: "rafael",
+    lastName: "Veliz",
+    email: "rafaelveliz@example.com",
+    password: "claudio1234",
+};
+const response = addUser(user4);
+console.log(response);*/
 
 
-
-//si se modifica la pass deberia ser nuevamente hasheada
-const updateUser = (userData) => {
+const updateUser = (id, dataUser) => {
     try {
-
+      const { name, lastName, email, password } = dataUser;
+  
+      if (!id) {
+        throw new Error("ID is missing");
+      }
+  
+      const users = getUsers(PATH_FILE_USER); 
+      const user = getUserById(id);
+  
+      if (!user) {
+        throw new Error("User not found");
+      }
+  
+   if (name) user.name = name;
+      if (lastName) user.lastName = lastName;
+      if (email) user.email = email;
+      if (password) user.password = password;
+  
+      const userIndex = users.findIndex(u => u.id === id);
+      if (userIndex !== -1) {
+        users[userIndex] = user; 
+      }
+  
+      writeFileSync(PATH_FILE_USER, JSON.stringify(users)); 
+      return user;
     } catch (error) {
+      const objError = handleError(error, PATH_FILE_ERROR);
+      return objError;
+    }
+  };
+  
+  const userToUpdate = {
+    id: "11b8285f-a153-411c-850f-d37b20546386",
+    name: "PRUEBA",
+    lastName: "PEREZ",
+    email: "claudioveliz@example.com",
+    password: "David123"
+  }
+  
+  const response = updateUser(userToUpdate.id, userToUpdate);
+  console.log(response);
 
+/*const updateUser = (id, dataUser) => {
+    try {
+        const { id, name, lastName, email, password } = user;
+        if (!id) {
+            throw new Error("ID is missing");
+        }
+        const users = getUsers(PATH_FILE_USER);
+        const user = getUserById(id);
+        if (!user) {
+            throw new Error("User not found");
+        }
+        if (name) user.name = name;
+        if (lastName) user.lastName = lastName;
+        if (email) user.email = email;
+        if (password) user.password = password;
+
+        writeFileSync(PATH_FILE_USER, JSON.stringify(users));
+        return user;
+    } catch (error) {
+        const objError = handleError(error, PATH_FILE_ERROR);
+        return objError;
     }
 };
+
+const userToUpdate = {
+    id: "11b8285f-a153-411c-850f-d37b20546386",
+    name: "PRUEBA",
+    lastName: "PEREZ",
+    email: "claudioveliz@example.com",
+    password: "David1234"
+}
+
+const response = updateUser("11b8285f-a153-411c-850f-d37b20546386");
+console.log(response);*/
+
+
 
 const deleteUser = (id) => {
     try {

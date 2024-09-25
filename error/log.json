@@ -48,5 +48,80 @@
         "id": "746921c9-57c7-4c59-86d1-d971874310fc",
         "type": "User with this email already exists",
         "date": "2024-09-24T22:32:41.859Z"
+    },
+    {
+        "id": "05b0da65-9a69-4868-9865-33074c056fe2",
+        "type": "hex is not defined",
+        "date": "2024-09-24T23:09:49.055Z"
+    },
+    {
+        "id": "0c94e384-568a-4f40-b802-ea5efefdb783",
+        "type": "bcrypt is not defined",
+        "date": "2024-09-24T23:19:25.989Z"
+    },
+    {
+        "id": "69aece83-e694-4873-a919-ca426df8ecbd",
+        "type": "awaitbcrypt is not defined",
+        "date": "2024-09-24T23:20:01.556Z"
+    },
+    {
+        "id": "f761f650-2cae-44f6-8a3e-5ef3d407af48",
+        "type": "require is not defined",
+        "date": "2024-09-24T23:21:22.520Z"
+    },
+    {
+        "id": "0e776321-75b5-47c1-92d5-2802bbd7b7da",
+        "type": "bcrypt.hash is not a function",
+        "date": "2024-09-24T23:21:44.838Z"
+    },
+    {
+        "id": "96a64d05-6a29-4d12-a7a0-05e9f1b4437e",
+        "type": "bcrypt.hash is not a function",
+        "date": "2024-09-24T23:23:25.437Z"
+    },
+    {
+        "id": "49f327a2-c6bd-459e-be66-56ef3c3c98a0",
+        "type": "bcrypt.hash is not a function",
+        "date": "2024-09-24T23:23:37.922Z"
+    },
+    {
+        "id": "0f618df6-1122-4130-a560-d33c80eff53f",
+        "type": "Cannot access 'user' before initialization",
+        "date": "2024-09-25T01:40:06.410Z"
+    },
+    {
+        "id": "572d09a0-d57f-4675-a596-7367fb736e7a",
+        "type": "Cannot access 'user' before initialization",
+        "date": "2024-09-25T01:47:39.430Z"
+    },
+    {
+        "id": "80419f16-ddbd-4156-a28c-68aa225699aa",
+        "type": "Cannot access 'user' before initialization",
+        "date": "2024-09-25T01:50:38.887Z"
+    },
+    {
+        "id": "92dd904c-31c2-4f8e-878a-99b0c26216a1",
+        "type": "Cannot access 'user' before initialization",
+        "date": "2024-09-25T01:50:55.096Z"
+    },
+    {
+        "id": "e8d12d49-70bc-4247-8d15-77a7288ebc92",
+        "type": "Cannot access 'user' before initialization",
+        "date": "2024-09-25T01:53:23.714Z"
+    },
+    {
+        "id": "845a6aeb-b4df-4913-911f-e82c5e67c348",
+        "type": "Cannot access 'user' before initialization",
+        "date": "2024-09-25T01:57:02.854Z"
+    },
+    {
+        "id": "cda76f7d-8cd5-432e-bd64-b5fc92568ece",
+        "type": "Cannot access 'user' before initialization",
+        "date": "2024-09-25T01:57:23.197Z"
+    },
+    {
+        "id": "51b8cb8e-5f62-45ba-8442-b0c478d89668",
+        "type": "Cannot access 'user' before initialization",
+        "date": "2024-09-25T02:02:42.116Z"
     }
 ]
