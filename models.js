@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { randomUUID } from "node:crypto";
+import { randomUUID, createHash } from "node:crypto";
 //avergiuar que importar de node el hash
 //averiguar como "activar" la lectura de variables de entorno del archivo.env (dotenv)
 import { handleError } from "./utils/handleError.js";
@@ -54,6 +54,8 @@ const addUser = (user) => {
             throw new Error("Missing data");
         }
 
+        const hashedPassword = createHash("sha256").update(password).digest("hex");
+
         const newUser = {
             id: randomUUID(),
             name,
@@ -101,7 +103,7 @@ const user3 = {
     lastName: "Veliz",
     email: "claudioveliz@example.com",
     password: "David1234",
-};
+};*/
 
 const user4 = {
     id: randomUUID(),
@@ -111,7 +113,7 @@ const user4 = {
     password: "claudio1234",
 };
 const response = addUser(user4);
-console.log(response);*/
+console.log(response);
 
 
 const updateUser = (id, dataUser) => {
@@ -181,4 +183,4 @@ const deleteUser = (id) => {
 /*const response = deleteUser("f73362a8-de3e-4fd2-ab40-34b8a387246e");
 console.log(response);*/
 
-export { getUsers, getUserById, addUser, updateUser, deleteUser }; 
+export { getUsers, getUserById, addUser, updateUser, deleteUser };

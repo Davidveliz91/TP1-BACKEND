@@ -1,1 +1,16 @@
-[{"id":"11b8285f-a153-411c-850f-d37b20546386","name":"PRUEBA","lastName":"PEREZ","email":"claudioveliz@example.com","password":"David123"}]
+[
+    {
+        "id": "11b8285f-a153-411c-850f-d37b20546386",
+        "name": "PRUEBA",
+        "lastName": "PEREZ",
+        "email": "claudioveliz@example.com",
+        "password": "David123"
+    },
+    {
+        "id": "0af9f463-b374-4865-b65f-6e1fe234aa59",
+        "name": "rafael",
+        "lastName": "Veliz",
+        "email": "rafaelveliz@example.com",
+        "password": "33c29e1fc673526e0280ce69f907401f7b27c4e33dcbb834beff20ebfe180af0"
+    }
+]
