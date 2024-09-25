@@ -1,7 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { randomUUID, createHash } from "node:crypto";
-//avergiuar que importar de node el hash
-//averiguar como "activar" la lectura de variables de entorno del archivo.env (dotenv)
 import { handleError } from "./utils/handleError.js";
 import dotenv from 'dotenv';
 
@@ -62,6 +60,7 @@ const addUser = (user) => {
             lastName,
             email,
             password: hashedPassword,
+            isLoggedIn: false,
         };
 
         const users = getUsers(PATH_FILE_USER);
@@ -69,7 +68,6 @@ const addUser = (user) => {
         if (users.find(u => u.email === email)) {
             throw new Error("User with this email already exists");
         };
-
         users.push(newUser);
         writeFileSync(PATH_FILE_USER, JSON.stringify(users));
         return newUser;
@@ -79,42 +77,6 @@ const addUser = (user) => {
         return objError;
     }
 };
-
-//Usuarios de Prueba
-/*const user = {
-    id: randomUUID(),
-    name: "detroit",
-    lastName: "Veliz",
-    email: "davidveliz@example.com",
-    password: "Dante1234",
-};
-
-const user2 = {
-    id: randomUUID(),
-    name: "dante",
-    lastName: "Veliz",
-    email: "davidveliz@example.com",
-    password: "David1234",
-};
-
-const user3 = {
-    id: randomUUID(),
-    name: "claudio",
-    lastName: "Veliz",
-    email: "claudioveliz@example.com",
-    password: "David1234",
-};*/
-
-const user4 = {
-    id: randomUUID(),
-    name: "rafael",
-    lastName: "Veliz",
-    email: "rafaelveliz@example.com",
-    password: "claudio1234",
-};
-const response = addUser(user4);
-console.log(response);
-
 
 const updateUser = (id, dataUser) => {
     try {
@@ -157,10 +119,6 @@ const userToUpdate = {
     password: "David123"
 }
 
-/*const response = updateUser(userToUpdate.id, userToUpdate);
-console.log(response);*/
-
-
 const deleteUser = (id) => {
     try {
         if (!id) {
@@ -179,8 +137,4 @@ const deleteUser = (id) => {
         return objError;
     }
 };
-
-/*const response = deleteUser("f73362a8-de3e-4fd2-ab40-34b8a387246e");
-console.log(response);*/
-
 export { getUsers, getUserById, addUser, updateUser, deleteUser };

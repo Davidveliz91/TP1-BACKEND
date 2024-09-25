@@ -24,3 +24,4 @@ Este proyecto permite gestionar usuarios con Node.js mediante argumentos desde l
 ## Contribuciones
 
 Las contribuciones son bienvenidas.
+Trabajo hecho en conjunto con Brian Veliz.

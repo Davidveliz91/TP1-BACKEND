@@ -4,13 +4,23 @@
         "name": "PRUEBA",
         "lastName": "PEREZ",
         "email": "claudioveliz@example.com",
-        "password": "David123"
+        "password": "David123",
+        "isLoggedIn": false
     },
     {
         "id": "0af9f463-b374-4865-b65f-6e1fe234aa59",
         "name": "rafael",
         "lastName": "Veliz",
         "email": "rafaelveliz@example.com",
-        "password": "33c29e1fc673526e0280ce69f907401f7b27c4e33dcbb834beff20ebfe180af0"
+        "password": "33c29e1fc673526e0280ce69f907401f7b27c4e33dcbb834beff20ebfe180af0",
+        "isLoggedIn": false
+    },
+    {
+        "id": "37bf1f89-e062-4361-a653-8a6442f817ec",
+        "name": "emmanuel",
+        "lastName": "Veliz",
+        "email": "emmanuelveliz@example.com",
+        "password": "6ec2159bb1c1ad2818d50282097a22b760de37c907cb00d94f8df31cacc05451",
+        "isLoggedIn": false
     }
 ]
