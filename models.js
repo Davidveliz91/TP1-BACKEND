@@ -116,63 +116,28 @@ console.log(response);*/
 
 const updateUser = (id, dataUser) => {
     try {
-      const { name, lastName, email, password } = dataUser;
-  
-      if (!id) {
-        throw new Error("ID is missing");
-      }
-  
-      const users = getUsers(PATH_FILE_USER); 
-      const user = getUserById(id);
-  
-      if (!user) {
-        throw new Error("User not found");
-      }
-  
-   if (name) user.name = name;
-      if (lastName) user.lastName = lastName;
-      if (email) user.email = email;
-      if (password) user.password = password;
-  
-      const userIndex = users.findIndex(u => u.id === id);
-      if (userIndex !== -1) {
-        users[userIndex] = user; 
-      }
-  
-      writeFileSync(PATH_FILE_USER, JSON.stringify(users)); 
-      return user;
-    } catch (error) {
-      const objError = handleError(error, PATH_FILE_ERROR);
-      return objError;
-    }
-  };
-  
-  const userToUpdate = {
-    id: "11b8285f-a153-411c-850f-d37b20546386",
-    name: "PRUEBA",
-    lastName: "PEREZ",
-    email: "claudioveliz@example.com",
-    password: "David123"
-  }
-  
-  const response = updateUser(userToUpdate.id, userToUpdate);
-  console.log(response);
+        const { name, lastName, email, password } = dataUser;
 
-/*const updateUser = (id, dataUser) => {
-    try {
-        const { id, name, lastName, email, password } = user;
         if (!id) {
             throw new Error("ID is missing");
         }
+
         const users = getUsers(PATH_FILE_USER);
         const user = getUserById(id);
+
         if (!user) {
             throw new Error("User not found");
         }
+
         if (name) user.name = name;
         if (lastName) user.lastName = lastName;
         if (email) user.email = email;
         if (password) user.password = password;
+
+        const userIndex = users.findIndex(u => u.id === id);
+        if (userIndex !== -1) {
+            users[userIndex] = user;
+        }
 
         writeFileSync(PATH_FILE_USER, JSON.stringify(users));
         return user;
@@ -187,20 +152,33 @@ const userToUpdate = {
     name: "PRUEBA",
     lastName: "PEREZ",
     email: "claudioveliz@example.com",
-    password: "David1234"
+    password: "David123"
 }
 
-const response = updateUser("11b8285f-a153-411c-850f-d37b20546386");
+/*const response = updateUser(userToUpdate.id, userToUpdate);
 console.log(response);*/
-
 
 
 const deleteUser = (id) => {
     try {
+        if (!id) {
+            throw new Error("ID is missing");
+        }
+        const users = getUsers(PATH_FILE_USER);
+        const user = getUserById(id);
+
+        const newUsers = users.filter((user) => user.id !== id);
+        writeFileSync(PATH_FILE_USER, JSON.stringify(newUsers));
+
+        return user;
 
     } catch (error) {
-
+        const objError = handleError(error, PATH_FILE_ERROR);
+        return objError;
     }
 };
+
+/*const response = deleteUser("f73362a8-de3e-4fd2-ab40-34b8a387246e");
+console.log(response);*/
 
 export { getUsers, getUserById, addUser, updateUser, deleteUser }; 
